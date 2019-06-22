@@ -1,3 +1,21 @@
 import React from "react"
+import { Link } from "gatsby";
 
-export default () => <div>Hello world!</div>
+import Layout from '../components/Layout'
+import SimpleHero from '../components/SimpleHero'
+import Banner from '../components/Banner'
+import About from '../components/Home/About'
+import Services from '../components/Home/Services'
+
+export default () => 
+(
+    <Layout>
+      <SimpleHero>
+        <Banner title="continue exploring" info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, molestias.">
+          <Link className="btn-white" to="/tours">explore tours</Link>
+        </Banner>
+      </SimpleHero>
+      <About />
+      <Services />
+    </Layout>
+)
