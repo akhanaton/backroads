@@ -18,5 +18,4 @@ const error = () => {
     </Layout>
   )
 }
-
 export default error
