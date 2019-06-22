@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Title from '../Title'
-import styles from '../../components/css/services.module.css'
+import styles from '../../css/services.module.css'
 import services from '../../utils/services'
 
 const Services = () => {

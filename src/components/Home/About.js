@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Title from '../Title'
-import styles from '../../components/css/about.module.css'
+import styles from '../../css/about.module.css'
 import img from '../../images/defaultBcg.jpeg'
 
 const About = () => {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { FaAlignRight } from "react-icons/fa";
 
-import styles from './css/navbar.module.css'
+import styles from '../css/navbar.module.css'
 import links from '../utils/links'
 import socialLinks from '../utils/socialLinks'
 import logo from '../images/logo.svg'

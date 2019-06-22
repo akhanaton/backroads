@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/Layout'
-import styles from '../components/css/error.module.css'
+import styles from '../css/error.module.css'
 import { Link } from 'gatsby'
 import Banner from '../components/Banner'
 

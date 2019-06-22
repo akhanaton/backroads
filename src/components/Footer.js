@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import links from '../utils/links'
 import socialLinks from '../utils/socialLinks'
-import styles from './css/footer.module.css'
+import styles from '../css/footer.module.css'
 
 const Footer = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './css/banner.module.css'
+import styles from '../css/banner.module.css'
 
 const Banner = ({ title, info, children }) => {
   return (
