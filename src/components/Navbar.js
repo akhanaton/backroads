@@ -13,7 +13,6 @@ const Navbar = () => {
   const toggleNav = () => {
     setNav(!isOpen)
   }
-  
   return (
     <nav className={styles.navbar}>
       <div className={styles.navCenter}>
@@ -24,7 +23,7 @@ const Navbar = () => {
             <FaAlignRight className={styles.logoIcon} />
           </button>
         </div>
-        <ul className={isOpen ? `${styles.navLinks} ${styles.showNav}}` 
+        <ul className={isOpen ? `${styles.navLinks} ${styles.showNav}` 
         : `${styles.navLinks}`}>
           {links.map((item, index) => {
             return (
