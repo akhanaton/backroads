@@ -72,4 +72,4 @@ yarn-error.log
 .vscode
 
 # Ignore .env
-.env
+.env.*
