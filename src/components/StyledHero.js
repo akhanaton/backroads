@@ -1,10 +1,15 @@
 import React from 'react'
+import { useStaticQuery } from "gatsby";
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
+import { getDefaultImage } from '../components/Tours/Tour'
+
 const StyledHero = ({ img, className, children, home }) => {
+  const { defaultImage} = useStaticQuery(getDefaultImage);
+
   return (
-    <BackgroundImage className={className} fluid={img} home={home}>
+    <BackgroundImage className={className} fluid={img || defaultImage.childImageSharp.fluid } home={home}>
       {children}
     </BackgroundImage>
   )

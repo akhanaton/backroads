@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Tours from '../components/Tours/Tours'
 
 import StyledHero from '../components/StyledHero'
 import Layout from '../components/Layout'
@@ -8,6 +9,7 @@ const tours = ({ data }) => {
   return (
     <Layout>
       <StyledHero img={data.toursBcg.childImageSharp.fluid} />
+      <Tours />
     </Layout>
   )
 }
