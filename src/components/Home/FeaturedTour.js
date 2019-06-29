@@ -1,24 +1,10 @@
-import React from 'react'
-import Tour from '../Tours/Tour'
+import React from 'react';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import { useStaticQuery, graphql } from 'gatsby';
+import Tour from '../Tours/Tour';
 
-import Title from "../Title";
-import styles from '../../css/items.module.css'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
-import { useStaticQuery } from 'gatsby';
-
-const FeaturedTour = () => {
-  const response = useStaticQuery(getFeaturedTours)
-  const tours = response.featuredTours.edges;
-  return (
-    <section className={styles.tours}>
-      <Title title="featured" subtitle="tours" />
-        <div className={styles.center}>
-          {tours.map(({ node}) => <Tour key={node.id} tour={node}/>)}
-        </div>
-      <AniLink fade to="/tours" className="btn-primary">all tours</AniLink>
-    </section>
-  )
-}
+import Title from '../Title';
+import styles from '../../css/items.module.css';
 
 export const getFeaturedTours = graphql`
 query{
@@ -40,6 +26,19 @@ query{
     }
   }
 }
-`
+`;
 
-export default FeaturedTour
+const FeaturedTour = () => {
+  const response = useStaticQuery(getFeaturedTours);
+  const tours = response.featuredTours.edges;
+  return (
+    <section className={styles.tours}>
+      <Title title="featured" subtitle="tours" />
+      <div className={styles.center}>
+        {tours.map(({ node }) => <Tour key={node.id} tour={node} />)}
+      </div>
+      <AniLink fade to="/tours" className="btn-primary">all tours</AniLink>
+    </section>
+  );
+};
+export default FeaturedTour;

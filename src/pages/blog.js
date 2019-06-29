@@ -1,17 +1,17 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import StyledHero from '../components/StyledHero'
+import StyledHero from '../components/StyledHero';
 
 
-import Layout from '../components/Layout'
-const blog = ({ data }) => {
-  return (
-    <Layout>
-      <StyledHero img={data.blogBcg.childImageSharp.fluid} />
-    </Layout>
-  )
-}
+import Layout from '../components/Layout';
+
+const blog = ({ data }) => (
+  <Layout>
+    <StyledHero img={data.blogBcg.childImageSharp.fluid} />
+  </Layout>
+);
 
 export const query = graphql`
 {
@@ -22,6 +22,10 @@ export const query = graphql`
       }
     }
   }
-}`
+}`;
 
-export default blog
+blog.propTypes = {
+  data: PropTypes.objectOf().isRequired,
+};
+
+export default blog;

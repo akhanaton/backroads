@@ -1,10 +1,10 @@
-import React from 'react'
-import { graphql, useStaticQuery } from "gatsby";
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
 
-import styled from 'styled-components'
-import img from '../images/connectBcg.jpeg'
-import Img from 'gatsby-image'
+import styled from 'styled-components';
+import Img from 'gatsby-image';
+import img from '../images/connectBcg.jpeg';
 
 const StyledImages = styled.div`
   text-align: center;
@@ -23,7 +23,7 @@ const StyledImages = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 1rem;
   }
-`
+`;
 
 const getImages = graphql`
   query Images {
@@ -41,16 +41,16 @@ const getImages = graphql`
       }
     }
   }
-}`
+}`;
 
 const Images = () => {
-const data = useStaticQuery(getImages)
-console.log(data)
+  const data = useStaticQuery(getImages);
+
   return (
     <StyledImages>
       <article>
         <h3>basic image</h3>
-        <img src={img} alt="basic" className="basic"/>
+        <img src={img} alt="basic" className="basic" />
       </article>
       <article>
         <h3>fixed image/blur</h3>
@@ -61,7 +61,7 @@ console.log(data)
         <Img fluid={data.fluid.childImageSharp.fluid} />
       </article>
     </StyledImages>
-  )
-}
+  );
+};
 
-export default Images
+export default Images;

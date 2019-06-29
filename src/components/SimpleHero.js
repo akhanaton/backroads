@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const SimpleHero = ({ children }) => {
-  return (
-    <header className="defaultHero">
-      {children}
-    </header>
-  )
-}
+const SimpleHero = ({ children }) => (
+  <header className="defaultHero">
+    {children}
+  </header>
+);
 
-export default SimpleHero
+SimpleHero.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+
+export default SimpleHero;

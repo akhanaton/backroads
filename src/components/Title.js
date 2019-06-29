@@ -1,5 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledTitle = styled.div`
   text-transform: uppercase;
@@ -22,17 +23,21 @@ const StyledTitle = styled.div`
       margin: 0 0.35rem;
     }
   }
-`
+`;
 
-const Title = ({ title, subtitle }) => {
-  return (
-    <StyledTitle>
-      <h4>
-        <span className="title">{title}</span>
-        <span>{subtitle}</span>
-      </h4>
-    </StyledTitle>
-  )
-}
+const Title = ({ title, subtitle }) => (
+  <StyledTitle>
+    <h4>
+      <span className="title">{title}</span>
+      <span>{subtitle}</span>
+    </h4>
+  </StyledTitle>
+);
 
-export default Title
+
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+};
+
+export default Title;

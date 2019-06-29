@@ -1,7 +1,7 @@
-import React from 'react'
-import { graphql, useStaticQuery } from "gatsby";
+import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
-import TourList from './TourList'
+import TourList from './TourList';
 
 const getTours = graphql`
  query{
@@ -22,15 +22,15 @@ const getTours = graphql`
       }
     }
   }
-}`
+}`;
 
 const Tours = () => {
   const { tours: { edges } } = useStaticQuery(getTours);
   return (
     <div>
-      <TourList tours={ edges } />
+      <TourList tours={edges} />
     </div>
-  )
-}
+  );
+};
 
-export default Tours
+export default Tours;

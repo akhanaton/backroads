@@ -1,16 +1,21 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import '../css/layout.css'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Layout = ({ children }) => {
-  return (
-    <>
-      <Navbar />
-        { children }
-      <Footer />
-    </>
-  )
-}
 
-export default Layout
+import Navbar from './Navbar';
+import Footer from './Footer';
+import '../css/layout.css';
+
+const Layout = ({ children }) => (
+  <>
+    <Navbar />
+    { children }
+    <Footer />
+  </>
+);
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;

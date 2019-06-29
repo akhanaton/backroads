@@ -1,18 +1,21 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Tours from '../components/Tours/Tours'
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import StyledHero from '../components/StyledHero'
-import Layout from '../components/Layout'
+import Tours from '../components/Tours/Tours';
+import StyledHero from '../components/StyledHero';
+import Layout from '../components/Layout';
 
-const tours = ({ data }) => {
-  return (
-    <Layout>
-      <StyledHero img={data.toursBcg.childImageSharp.fluid} />
-      <Tours />
-    </Layout>
-  )
-}
+const tours = ({ data }) => (
+  <Layout>
+    <StyledHero img={data.toursBcg.childImageSharp.fluid} />
+    <Tours />
+  </Layout>
+);
+
+tours.propTypes = {
+  data: PropTypes.objectOf().isRequired,
+};
 
 export const query = graphql`
 {
@@ -23,6 +26,6 @@ export const query = graphql`
       }
     }
   }
-}`
+}`;
 
-export default tours
+export default tours;

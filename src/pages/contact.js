@@ -1,18 +1,21 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React from 'react';
+import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 
-import StyledHero from '../components/StyledHero'
-import Contact from '../components/Contact/Contact'
-import Layout from '../components/Layout'
+import StyledHero from '../components/StyledHero';
+import Contact from '../components/Contact/Contact';
+import Layout from '../components/Layout';
 
-const contact = ({ data }) => {
-  return (
-    <Layout>
-      <StyledHero img={data.contactBcg.childImageSharp.fluid} />
-      <Contact />
-    </Layout>
-  )
-}
+const contact = ({ data }) => (
+  <Layout>
+    <StyledHero img={data.contactBcg.childImageSharp.fluid} />
+    <Contact />
+  </Layout>
+);
+
+contact.propTypes = {
+  data: PropTypes.objectOf().isRequired,
+};
 
 export const query = graphql`
 {
@@ -23,6 +26,6 @@ export const query = graphql`
       }
     }
   }
-}`
+}`;
 
-export default contact
+export default contact;

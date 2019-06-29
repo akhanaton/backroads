@@ -1,28 +1,35 @@
-import React from "react"
-import { graphql } from "gatsby";
-import AniLink from "gatsby-plugin-transition-link/AniLink";
-
-import Layout from '../components/Layout'
-import StyledHero from '../components/StyledHero'
-import Banner from '../components/Banner'
-import About from '../components/Home/About'
-import Services from '../components/Home/Services'
-import FeaturedTour from '../components/Home/FeaturedTour'
+import React from 'react';
+import { graphql } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import PropTypes from 'prop-types';
 
 
-export default ({ data }) => 
-(
-    <Layout>
-      <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
-        <Banner title="continue exploring" info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, molestias.">
-          <AniLink fade className="btn-white" to="/tours">explore tours</AniLink>
-        </Banner>
-      </StyledHero>
-      <About />
-      <Services />
-      <FeaturedTour />
-    </Layout>
-)
+import Layout from '../components/Layout';
+import StyledHero from '../components/StyledHero';
+import Banner from '../components/Banner';
+import About from '../components/Home/About';
+import Services from '../components/Home/Services';
+import FeaturedTour from '../components/Home/FeaturedTour';
+
+
+const index = ({ data }) => (
+  <Layout>
+    <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+      <Banner title="continue exploring" info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, molestias.">
+        <AniLink fade className="btn-white" to="/tours">explore tours</AniLink>
+      </Banner>
+    </StyledHero>
+    <About />
+    <Services />
+    <FeaturedTour />
+  </Layout>
+);
+
+index.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.object.isRequired,
+};
+
 
 export const query = graphql`
 {
@@ -33,4 +40,7 @@ export const query = graphql`
       }
     }
   }
-}`
+}`;
+
+
+export default index;
