@@ -19,7 +19,8 @@ const Template = ({ data }) => {
 };
 
 Template.propTypes = {
-  data: PropTypes.objectOf().isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.any.isRequired,
 };
 
 export const query = graphql`

@@ -14,7 +14,7 @@ import FeaturedTour from '../components/Home/FeaturedTour';
 
 const index = ({ data }) => (
   <Layout>
-    <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+    <StyledHero home img={data.defaultBcg.childImageSharp.fluid}>
       <Banner title="continue exploring" info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, molestias.">
         <AniLink fade className="btn-white" to="/tours">explore tours</AniLink>
       </Banner>
@@ -27,7 +27,7 @@ const index = ({ data }) => (
 
 index.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  data: PropTypes.object.isRequired,
+  data: PropTypes.any.isRequired,
 };
 
 

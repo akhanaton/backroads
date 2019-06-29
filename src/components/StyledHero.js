@@ -14,7 +14,7 @@ const StyledHero = ({
     <BackgroundImage
       className={className}
       fluid={img || defaultImage.childImageSharp.fluid}
-      home={home}
+      home={home.toString()}
     >
       {children}
     </BackgroundImage>
@@ -25,12 +25,13 @@ StyledHero.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   img: PropTypes.any.isRequired,
   className: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
-  home: PropTypes.string,
+  children: PropTypes.element,
+  home: PropTypes.bool,
 };
 
 StyledHero.defaultProps = {
   home: false,
+  children: React.element,
 };
 
 export default styled(StyledHero)`
