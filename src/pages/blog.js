@@ -25,7 +25,8 @@ export const query = graphql`
 }`;
 
 blog.propTypes = {
-  data: PropTypes.objectOf().isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  data: PropTypes.any.isRequired,
 };
 
 export default blog;
