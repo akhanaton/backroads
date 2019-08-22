@@ -3,7 +3,7 @@ const path = require('path');
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const { data } = await graphql(`
-  query{
+  query tours{
     tours:allContentfulTour{
       edges{
         node{

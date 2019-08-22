@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const SEO = ({ title, description }) => (
-  <Helmet title={title}>
+  <Helmet htmlAttributes={{ lang: 'en' }} title={title}>
     <meta name="description" content={description} />
   </Helmet>
 );
