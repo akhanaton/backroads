@@ -10,10 +10,12 @@ import Banner from '../components/Banner';
 import About from '../components/Home/About';
 import Services from '../components/Home/Services';
 import FeaturedTour from '../components/Home/FeaturedTour';
+import SEO from '../components/SEO';
 
 
 const index = ({ data }) => (
   <Layout>
+    <SEO title="home" description="This is a description" />
     <StyledHero home img={data.defaultBcg.childImageSharp.fluid}>
       <Banner title="continue exploring" info="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, molestias.">
         <AniLink fade className="btn-white" to="/tours">explore tours</AniLink>

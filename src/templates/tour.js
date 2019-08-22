@@ -70,9 +70,8 @@ Template.propTypes = {
 };
 
 export const query = graphql`
-query($id: String){
-  tour:contentfulTour(id: { eq: $id} ){
-    id
+query($slug: String){
+  tour:contentfulTour(slug: { eq: $slug} ){
     name
     price
     country

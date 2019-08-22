@@ -3,13 +3,13 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import StyledHero from '../components/StyledHero';
-
-
+import BlogList from '../components/Blog/BlogList';
 import Layout from '../components/Layout';
 
 const blog = ({ data }) => (
   <Layout>
     <StyledHero img={data.blogBcg.childImageSharp.fluid} />
+    <BlogList />
   </Layout>
 );
 
