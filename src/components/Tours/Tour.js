@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import styles from '../../css/tour.module.css';
 
 
-export const getDefaultImage = graphql`
+const getDefaultImage = graphql`
   query{
   defaultImage:file(relativePath: {eq:"defaultBcg.jpeg"}){
     childImageSharp{

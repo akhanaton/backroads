@@ -1,10 +1,20 @@
 import React from 'react';
-import { useStaticQuery } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
 import PropTypes from 'prop-types';
 
-import { getDefaultImage } from './Tours/Tour';
+const getDefaultImage = graphql`
+  query{
+  defaultImage:file(relativePath: {eq:"defaultBcg.jpeg"}){
+    childImageSharp{
+      fluid{
+        ...GatsbyImageSharpFluid_tracedSVG
+      }
+    }
+  }
+}
+`;
 
 const StyledHero = ({
   img, className, children, home,
